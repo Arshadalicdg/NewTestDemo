@@ -58,7 +58,7 @@ fun TimerApp(countTimeViewModel: CountTimeViewModel, modifier: Modifier = Modifi
     val resumed = countTimeViewModel.isRunning.observeAsState()
 
     val progress = countTimeViewModel.progress.observeAsState(1f)
-    val timeShow = countTimeViewModel.time.observeAsState(initial = "00:00:00")
+    val timeShow = countTimeViewModel.time.observeAsState(initial = "00:00")
 
     Surface(color = MaterialTheme.colors.background) {
         val typography = MaterialTheme.typography
@@ -96,7 +96,7 @@ fun TimerApp(countTimeViewModel: CountTimeViewModel, modifier: Modifier = Modifi
             ) {
                 Box(Modifier.padding(40.dp), contentAlignment = Alignment.Center) {
                     CircularProgressIndicator(
-                        color = Color.Yellow,
+                        color = Color(0xFD199450),
                         modifier = Modifier.size(250.dp),
                         progress = progress.value,
                         strokeWidth = 12.dp
@@ -215,7 +215,7 @@ fun TimerApp(countTimeViewModel: CountTimeViewModel, modifier: Modifier = Modifi
                         .padding(16.dp)
                         .height(48.dp)
                         .widthIn(min = 48.dp),
-                    backgroundColor = Color.Yellow,
+                    backgroundColor = Color(0xFD199450),
                     contentColor = MaterialTheme.colors.onPrimary
                 )
                 {
@@ -238,13 +238,13 @@ fun TimerApp(countTimeViewModel: CountTimeViewModel, modifier: Modifier = Modifi
 
                             if (resumed.value != true){
                                 Text(
-                                    color = Color.DarkGray,
+                                    color = Color.White,
                                     text = "Count Down!"
                                 )
                             }
                             else{
                                 Text(
-                                    color = Color.DarkGray,
+                                    color = Color.White,
                                     text = "Pause"
                                 )
 
